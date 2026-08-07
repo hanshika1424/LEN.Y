@@ -154,30 +154,32 @@ def full_verification(
 
     # Database verification takes precedence
     if db_result["verified"]:
+
+     if ai_risk >= 70:
+        final_verdict = "BLOCKED"
+        confidence_score = 95
+
+     elif ai_risk >= 40:
+        final_verdict = "SUSPICIOUS"
+        confidence_score = 80
+
+     else:
         final_verdict = "VERIFIED"
         confidence_score = 99
 
     else:
-        if ai_risk >= 80:
-            final_verdict = "BLOCKED"
-            confidence_score = 99
 
-        elif ai_risk >= 60:
-            final_verdict = "BLOCKED"
-            confidence_score = 95
+     if ai_risk >= 70:
+        final_verdict = "BLOCKED"
+        confidence_score = 92
 
-        elif ai_risk >= 40:
-            final_verdict = "SUSPICIOUS"
-            confidence_score = 80
+     elif ai_risk >= 40:
+        final_verdict = "SUSPICIOUS"
+        confidence_score = 75
 
-        elif ai_risk >= 20:
-            final_verdict = "SUSPICIOUS"
-            confidence_score = 65
-
-        else:
-            final_verdict = "SUSPICIOUS"
-            confidence_score = 50
-
+     else:
+        final_verdict = "SUSPICIOUS"
+        confidence_score = 45
     return {
         "keyword_hits": keyword_hits,
         "ai_risk_score": ai_risk,
