@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    
+    <title>ZeroTrust</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <main>
+      <h1>ZeroTrust</h1>
+      <section class="striped-pattern">
+        <p class ="Introduction">In this growing age of technology, Fraud using messages has not only become common but also very smart. Regulatory bodies like RBI encourage users to stay alert and protect themselves from digital fraud.
+        </p>
+        <p class ="Introduction"> 
+          But, How do we do it?
+          We at ZeroTrust give you a way to get direct confirmation from your bank about the authenticity of the message you received.
+        </p>
+         <div class="image-container">
+         <img src="rbi.jpg" alt="Left photo" class="normal-photo">
+         <img src="smishing.png" alt="Right photo" class="floating-photo">
+        </div>
+ 
+        <h2>Details:</h2>
+        <p class="details">We at ZeroTrust are committed to being a shield against fraudulent bank messages.</p>
+        <p class="details"> We aim to take minimal data from you, and maximize your privacy. </p>
+        <p class="details">We take your privacy seriously and do not store any of your personal information. We only use the message content to check for suspicious patterns and verify authenticity with the bank's database.
+          We will extract only the necessary information for verification, ensuring that the content itself is never exposed or stored.
+        </p>
+        <!-- For this prototype, we are using a mock database to simulate the bank's verification process. In a real-world application, this would be replaced with a secure connection to the bank's actual database. -->
+
+        <p class="details">And lastly, we do not store any of your personal information, including your phone number. Your privacy is our top priority.
+        </p>
+        <hr>
+        <h3>ENTER:</h3>
+        <p class="data">Please enter the phone number you recieved the message on:</p>
+        <input
+            type = "tel"
+            id = "phone-number"
+            placeholder = "Enter your phone number here"
+        >
+        <br>
+        <p class="data">Please paste your message here:</p>
+        <textarea
+            id = "message"
+            rows = "15"
+            cols = "30"
+            placeholder = "Paste your message here"
+        ></textarea>
+        <button id="analyze-button">Analyze</button>
+        </section>
+
+        <p id="result"></p>
+    </main>
+    <script src="app.js"></script>
+    </body>
+</html>
