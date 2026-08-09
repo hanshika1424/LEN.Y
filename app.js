@@ -36,16 +36,26 @@ function analyzeMessage() {
         message_body: body
     };
 
-    document.getElementById("result").innerHTML =
-        "<h3>Extracted Information</h3>" +
-        "Phone Number: " + phone + "<br>" +
+    document.getElementById("result-card").style.display = "block";
+
+    document.getElementById("result-status").innerHTML =
+        "Message Analysis";
+
+    document.getElementById("confidence").innerHTML =
+        "Extracted information";
+
+    document.getElementById("bank-check").innerHTML =
         "Message ID: " + messageID + "<br>" +
         "Customer ID: " + customerID + "<br>" +
+        "Phone Number: " + phone;
+
+    document.getElementById("ai-check").innerHTML =
         "Department: " + department + "<br>" +
         "Sender: " + sender + "<br>" +
-        "Time: " + timestamp + "<br><br>" +
-        "<b>Message Body:</b><br>" +
-        body;
+        "Time: " + timestamp;
+
+    document.getElementById("department-check").innerHTML =
+        "Message Body: " + body;
 
     console.log(data);
 
@@ -65,21 +75,30 @@ function analyzeMessage() {
 
     .then(result => {
 
-        document.getElementById("result").innerHTML +=
-            "<hr>" +
-            "<h3>Verification Result</h3>" +
-            "Verdict: " + result.final_verdict + "<br>" +
-            "Confidence Score: " + result.confidence_score + "%<br>" +
-            "Database Check: " + result.db_check.reason;
+        document.getElementById("result-card").style.display = "block";
+
+        document.getElementById("result-status").innerHTML =
+    result.final_verdict;
+
+        document.getElementById("confidence").innerHTML =
+            "Confidence Score: " + result.confidence_score + "%";
+
+        document.getElementById("bank-check").innerHTML =
+            "✓ Database Check: " + result.db_check.reason;
+
+        document.getElementById("recommendation").innerHTML =
+            result.final_verdict == "VERIFIED"
+            ? "This message appears to be authentic."
+            : "Do not click links or share sensitive information.";
 
         if (result.final_verdict == "VERIFIED") {
-            document.getElementById("result").style.color = "green";
+            document.getElementById("result-status").style.color = "green";
         }
         else if (result.final_verdict == "SUSPICIOUS") {
-            document.getElementById("result").style.color = "orange";
+            document.getElementById("result-status").style.color = "orange";
         }
         else if (result.final_verdict == "BLOCKED") {
-            document.getElementById("result").style.color = "red";
+            document.getElementById("result-status").style.color = "red";
         }
 
     })
