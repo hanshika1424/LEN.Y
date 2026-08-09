@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify  #Used AI to use these functions
+rom flask import Flask, request, jsonify  #Used AI to use these functions
 from verifier import full_verification
 app = Flask(__name__)
 @app.after_request
