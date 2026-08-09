@@ -1,62 +1,55 @@
 body {
-    background-color: LightCyan;
+    background: linear-gradient(135deg, #005e94ad, #da0c0c82);
     font-family: Arial, sans-serif;
 }
 main {
-    background-color: powderblue;
+    background-color: lightcyan;
     padding: 20px;
     margin: 20px auto;
-    border: solid darkblue 2px;
+    border: solid rgba(0, 86, 139, 0.756) 2px;
     max-width: 700px;
     width: 90%;
     box-sizing: border-box;
 }
-h1{
-    font-size: 50px;
-    font-family: cambria, serif;
-    text-align: center;
-    color: darkblue;
-    border: solid darkblue 2px;
-}
-.image-container {
+.logo-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin-top: 30px;
+    justify-content: center;
+    margin-bottom: 30px;
 }
-.image-container img {
-    width: 100%;
-    max-width: 250px;
+
+.logo-container img {
+    width: 400px;
+    max-width: 100%;
     height: auto;
-}
-.Introduction{
-    font-size: 24px;
-    font-family: cambria, serif;
-    color: darkblue;
-    margin-bottom: 20px;
 }
 .details{
     font-size: 20px;
     font-family: georgia, serif;
-    color: darkblue;
+    color: rgb(254, 254, 255);
     margin-bottom: 20px;
 }
 
 .striped-pattern {
-    background-color: LightCyan;
+    background: linear-gradient(135deg, #005e949a, #ba5151);
     padding: 10px;
 }
-h3, h2 {
+h1{
     font-size: 24px;
     font-family: cambria, serif;
-    color: darkblue;
+    color: rgb(255, 255, 255);
     margin-bottom: 20px;
+}
+h2{
+    font-size: 28px;
+    font-family: cambria, serif;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    text-align: center
 }
 .data{
     font-size: 20px;
     font-family: cambria, serif;
-    color: black;
+    color: rgb(255, 252, 252);
     margin-bottom: 20px;
 }
 button {
@@ -89,3 +82,47 @@ textarea {
     box-sizing: border-box;
     margin-bottom: 15px;
 }
+.result-card {
+    display: none;
+    background-color:LightCyan;
+    margin-top: 25px;
+    padding: 20px;
+    border: 2px solid darkblue;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+#result-status {
+    font-size: 28px;
+    font-family: cambria, serif;
+    color: darkblue;
+    margin-bottom: 10px;
+}
+
+#confidence {
+    font-size: 20px;
+    font-family: cambria, serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#verification-details {
+    background-color: white;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid gray;
+}
+
+#verification-details p {
+    font-size: 17px;
+    font-family: Arial, sans-serif;
+    margin: 10px 0;
+}
+
+#recommendation {
+    font-size: 18px;
+    font-family: cambria, serif;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
